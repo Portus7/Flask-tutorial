@@ -48,6 +48,7 @@ def test_exists_required(client, auth, path):
     auth.login()
     assert client.post(path).status_code == 404
 
+
 def test_create(client, auth, app):
     auth.login()
     assert client.get('/create').status_code == 200
@@ -78,7 +79,7 @@ def test_create_update_validate(client, auth, path):
     auth.login()
     response = client.post(path, data={'title': '', 'body': ''})
     assert b'Title is required.' in response.data
-
+    
 def test_delete(client, auth, app):
     auth.login()
     response = client.post('/1/delete')
