@@ -4,3 +4,8 @@ Tutorial flask
 ```bash
 pip install flask
 ```
+Run init-db to create the database in the instance folder.
+
+```bash
+flask --app flaskr init-db
+```
